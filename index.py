@@ -34,6 +34,7 @@ def boxplot_height(menRowing, menGymnastics, menBasketball, menTaek):
     ax.set_xticklabels(["Rowing", "Gymnastics", "Basket", "Taekwondo"])
     # Add a y-axis label
     ax.set_ylabel("Height (cm)")
+    ax.set_title("Height (cm) of some male categories")
     plt.show()
 #error var charts
 def barcharts_error_varchats(menRowing, menGymnastics, menBasketball, menTaek):
