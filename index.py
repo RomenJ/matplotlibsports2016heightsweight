@@ -16,7 +16,7 @@ def display_filtered_data(filtered_data):
     print(filtered_data.head(10))
     binsDef=[150, 160, 170, 180, 190, 200, 210]
 def plot_height_differences(menRowing, menGymnastics, menBasketball, menTaek):
-    fig, ax = plt.subplots()
+    figP, ax = plt.subplots()
     ax.hist(menRowing["Height"], label="Rowling", color="lightblue", ec="darkblue", lw=1, bins=5)
     ax.hist(menGymnastics["Height"], label="Gymnastics", color="lightgreen", ec="darkgreen", lw=1, bins=5)
     ax.hist(menBasketball["Height"], label="Basketball", color="lightpink", ec="darkred", lw=1, bins=5)
@@ -29,16 +29,17 @@ def plot_height_differences(menRowing, menGymnastics, menBasketball, menTaek):
     plt.show()
 
 def boxplot_height(menRowing, menGymnastics, menBasketball, menTaek):
-    fig, ax = plt.subplots()
+    figB, ax = plt.subplots()
     ax.boxplot([ menRowing["Height"], menGymnastics["Height"], menBasketball["Height"],menTaek["Height"]])
     ax.set_xticklabels(["Rowing", "Gymnastics", "Basket", "Taekwondo"])
     # Add a y-axis label
     ax.set_ylabel("Height (cm)")
     ax.set_title("Height (cm) of some male categories")
+    figB.savefig("boxplot_height.png")
     plt.show()
 #error var charts
 def barcharts_error_varchats(menRowing, menGymnastics, menBasketball, menTaek):
-    fig, ax = plt.subplots()
+    figC, ax = plt.subplots()
 # Add a bar for the rowing "Height" column mean/std
     ax.bar("Rowing", menRowing["Height"].mean(), yerr=menRowing["Height"].std(), color="lightblue", ec="darkblue")
 # Add a bar for the gymnastics "Height" column mean/std
